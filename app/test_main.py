@@ -30,6 +30,7 @@ import pytest
 )
 @patch("app.main.datetime.date")
 def test_outdated_products(
-        mock_date: Mock, product_list: list, today_date: datetime.date, expected: list) -> None:
+        mock_date: Mock, product_list: list,
+        today_date: datetime.date, expected: list) -> None:
     mock_date.today.return_value = today_date
     assert outdated_products(product_list) == expected
